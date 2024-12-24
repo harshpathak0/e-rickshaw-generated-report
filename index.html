@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gwalior Smart City</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #fcba03;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 50px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #fcba03;
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .download-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #fcba03;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .download-button:hover {
+            background-color: #fcba03;
+        }
+        .date-selector {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="public/icon.png" alt="Logo"/>
+            <h1>Gwalior Smart City</h1>
+        </div>
+
+        <p><Strong> Gwalior E-Richshaw Registration Report </Strong></p>
+
+        <div class="section">
+            <!-- <h2>Data Table</h2> -->
+            <div class="table-container">
+                <table id="metrics-table">
+                    <thead>
+                        <tr>
+                            <tr>
+                                <th>स.नं.</th>
+                                <th>समय</th>
+                                <th>जोन का नाम</th>
+                                <th>आवेदकों का नाम</th>
+                                <th>मोबाईल नं.</th>
+                                <th>गाड़ी नं.</th>
+                                <th>पता का नाम</th>
+                                <th>माता का नाम</th>
+                                <th>घर का पता</th>
+                            </tr>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>3 AM - 3 PM</td>
+                            <td>HAZIRA</td>
+                            <td>Keshav Singh</td>
+                            <td>8319818901</td>
+                            <td>MP07FZ2940</td>
+                            <td>KESHAV SINGH PARMAR</td>
+                            <td>Usha Parmar</td>
+                            <td>Koteshwar Colony</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>3 PM - 3 AM</td>
+                            <td>HAZIRA</td>
+                            <td>Balkishan Nigmani</td>
+                            <td>7354656108</td>
+                            <td>MP07RA8723</td>
+                            <td>Matadeen Nigmani YES</td>
+                            <td>Char Sher Ka Naka</td>
+                            <td>Indra Nagar</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>3 AM - 3 PM</td>
+                            <td>HAZIRA</td>
+                            <td>Balram</td>
+                            <td>9669125576</td>
+                            <td>MP07ZH3252</td>
+                            <td>Sher Singh Logshree</td>
+                            <td>Garam Margpura</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>3 PM - 3 AM</td>
+                            <td>HAZIRA</td>
+                            <td>Anil Rathor</td>
+                            <td>6260819328</td>
+                            <td>MP07ZK7762</td>
+                            <td>Jagdish Parsad Rathor</td>
+                            <td>Leela Devi</td>
+                            <td>Karigaro Ki Bagiya, Goshpura No.1 Hazira</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>3 AM - 3 PM</td>
+                            <td>HAZIRA</td>
+                            <td>Keshav Mahor</td>
+                            <td>7898358865</td>
+                            <td>MP07RA9217</td>
+                            <td>Sitaram Mahor</td>
+                            <td>Meera Bai</td>
+                            <td>Malgada Police Colony</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>3 PM - 3 AM</td>
+                            <td>HAZIRA</td>
+                            <td>Uday Bhan Singh Rajawat</td>
+                            <td>9752873917</td>
+                            <td>-</td>
+                            <td>Jalebi Bai</td>
+                            <td>Pragti Nagar</td>
+                            <td>Rasham Mill</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>3 AM - 3 PM</td>
+                            <td>HAZIRA</td>
+                            <td>Sunita</td>
+                            <td>9399757661</td>
+                            <td>MP07ZE8607</td>
+                            <td>Rinku Jaloriya</td>
+                            <td>Khidki Mohalla</td>
+                            <td>Horipura Kila Gate</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>3 PM - 3 AM</td>
+                            <td>HAZIRA</td>
+                            <td>Santosh Namdev</td>
+                            <td>9755412794</td>
+                            <td>MP07RA5114</td>
+                            <td>-</td>
+                            <td>LOHA MANDI</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>3 AM - 3 PM</td>
+                            <td>HAZIRA</td>
+                            <td>Ram Hari Sharma</td>
+                            <td>9522077863</td>
+                            <td>MP07ZL1336</td>
+                            <td>Radhe Shayam Sharma</td>
+                            <td>Rajabeti Sharma</td>
+                            <td>Garam Chandokar Push, Dharmnagar Tehsil Pursa, Morena</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>3 PM - 3 AM</td>
+                            <td>HAZIRA</td>
+                            <td>Naresh Kumar</td>
+                            <td>8359890585</td>
+                            <td>MP07ZQ2593</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>3 AM - 3 PM</td>
+                            <td>HAZIRA</td>
+                            <td>Naresh Kumar</td>
+                            <td>8359890585</td>
+                            <td>MP07ZF1811</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>3 PM - 3 AM</td>
+                            <td>HAZIRA</td>
+                            <td>Sonu Kostha</td>
+                            <td>6264320309</td>
+                            <td>MP07ZH1276</td>
+                            <td>Omprakash Kiran</td>
+                            <td>Kotla Mohalla</td>
+                            <td>Nali Ke Pass</td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+
+        <button class="download-button" onclick="downloadExcel()">Download as Excel</button>
+
+        <div class="footer">
+            <p>&copy; 2024. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function populateTable() {
+            const tableBody = document.querySelector("#metrics-table tbody");
+
+            data.forEach(row => {
+                const tableRow = document.createElement('tr');
+                tableRow.innerHTML = `
+                    <td>${row.sno}</td>
+                    <td>${row.sstLocation}</td>
+                    <td>${row.sstName}</td>
+                    <td>${row.mobileNumber}</td>
+                    <td>${row.checkingTime}</td>
+                    <td>${row.remark0400}</td>
+                    <td>${row.remark0600}</td>
+                    <td>${row.remark0800}</td>
+                    <td>${row.remark1000}</td>
+                `;
+                tableBody.appendChild(tableRow);
+            });
+        }
+
+        function downloadExcel() {
+            const table = document.getElementById('metrics-table');
+            const workbook = XLSX.utils.table_to_book(table);
+            XLSX.writeFile(workbook, 'report.xlsx');
+        }
+
+        document.addEventListener('DOMContentLoaded', populateTable);
+    </script>
+</body>
+</html>
